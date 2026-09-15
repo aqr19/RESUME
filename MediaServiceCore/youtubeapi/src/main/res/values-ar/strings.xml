@@ -1,0 +1,4 @@
+<resources>
+    <string name="dump_debug_info">حدث خطأ. يرجى إرسال هذا الملف لفريق الدعم: %s</string>
+    <string name="section_trending">المحتوى الرائج</string>
+</resources>

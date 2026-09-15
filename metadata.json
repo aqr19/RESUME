@@ -1,0 +1,6 @@
+{
+  "name": "Resume",
+  "description": "Native Android TV client with 4K/2K AV1 playback, Media3, and SponsorBlock.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

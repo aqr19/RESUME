@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Ambient Red Glow inside safe zone -->
+    <path
+        android:pathData="M52,54m-36,0a36,36 0 1,1 72,0a36,36 0 1,1 -72,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="52"
+                android:centerY="54"
+                android:gradientRadius="36"
+                android:startColor="#40FF1744"
+                android:endColor="#00000000"
+                android:type="radial" />
+        </aapt:attr>
+    </path>
+
+    <!-- Base 3D Triangular Ribbon Shadow Layer -->
+    <path
+        android:pathData="M37.5,29.5 C40,25 45,25 47.5,29.5 L78.5,50.5 C81.5,52.5 81.5,56.5 78.5,58.5 L47.5,79.5 C45,83.5 40,83.5 37.5,79.5 C35,76 35,33 37.5,29.5 Z"
+        android:fillColor="#4A0512" />
+
+    <!-- Outer Continuous Ribbon Body -->
+    <path
+        android:pathData="M38.5,30.5 C40.5,26.5 44.5,26.5 46.8,30 L77.5,50.8 C80.2,52.6 80.2,56.4 77.5,58.2 L46.8,79 C44.5,82.5 40.5,82.5 38.5,78.5 C36.2,74.5 36.2,34.5 38.5,30.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="36"
+                android:startY="28"
+                android:endX="80"
+                android:endY="78"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF2D55" />
+                <item android:offset="0.45" android:color="#E50914" />
+                <item android:offset="0.75" android:color="#B71C1C" />
+                <item android:offset="1.0" android:color="#7F0019" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Inner Triangular Cutout / Negative Space -->
+    <path
+        android:pathData="M44.5,39 C45.5,37.5 47.5,37.5 48.5,39 L63.5,49.5 C64.8,50.5 64.8,52.5 63.5,53.5 L48.5,64 C47.5,65.5 45.5,65.5 44.5,64 C43.2,62 43.2,41 44.5,39 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="44"
+                android:startY="38"
+                android:endX="64"
+                android:endY="64"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#141118" />
+                <item android:offset="1.0" android:color="#0A090D" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Ribbon Fold 1: Top Right Curving Inward Ribbon Bulb -->
+    <path
+        android:pathData="M46.8,30 C53,30 63,37 66,42 C62,45 55,46 50,43 C46,40.5 44.5,34 46.8,30 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="46"
+                android:startY="30"
+                android:endX="66"
+                android:endY="45"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF5277" />
+                <item android:offset="0.6" android:color="#E0113A" />
+                <item android:offset="1.0" android:color="#9E0826" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Ribbon Fold 2: Bottom Right Curving Upward Ribbon Bulb -->
+    <path
+        android:pathData="M77.5,58.2 C74,63 65,70 59,72 C58,66 60,59 66,54 C71,50 76,53 77.5,58.2 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="77"
+                android:startY="54"
+                android:endX="58"
+                android:endY="72"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF6B8B" />
+                <item android:offset="0.5" android:color="#F41847" />
+                <item android:offset="1.0" android:color="#A30021" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Ribbon Fold 3: Left Vertical Overlapping Pillowy Fold -->
+    <path
+        android:pathData="M38.5,78.5 C36.5,74 36.5,50 37.5,45 C41.5,47 47,51 47.5,57 C48,63 43,73 38.5,78.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="36"
+                android:startY="45"
+                android:endX="48"
+                android:endY="78"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF244D" />
+                <item android:offset="0.6" android:color="#D00D2D" />
+                <item android:offset="1.0" android:color="#780016" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Glossy Specular Sheen Highlight -->
+    <path
+        android:pathData="M41,32 C43,30 46,30 48,32 L75,50 C76.5,51 77,52.5 76,53.5 C75,54 73.5,53.5 72,52 L47,35 C44.5,33.5 42,34 40.5,35 C40,34.5 40.2,33 41,32 Z"
+        android:fillColor="#55FFFFFF" />
+</vector>

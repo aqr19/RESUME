@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+
+    <!-- Deep Obsidian Studio Background -->
+    <path
+        android:pathData="M0,0h320v180h-320z"
+        android:fillColor="#08080C" />
+
+    <!-- Ambient Crimson Center Glow -->
+    <path
+        android:pathData="M160,82m-80,0a80,80 0 1,1 160,0a80,80 0 1,1 -160,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="160"
+                android:centerY="82"
+                android:gradientRadius="80"
+                android:startColor="#33FF1744"
+                android:endColor="#00000000"
+                android:type="radial" />
+        </aapt:attr>
+    </path>
+
+    <!-- 3D Ribbon Play Triangle Group (Centered at 160, 72) -->
+    <!-- Shadow Base -->
+    <path
+        android:pathData="M136,36 C140,30 148,30 152,36 L196,66 C200,69 200,75 196,78 L152,108 C148,114 140,114 136,108 C132,103 132,41 136,36 Z"
+        android:fillColor="#3A030D" />
+
+    <!-- Main Ribbon Outer Triangle -->
+    <path
+        android:pathData="M137.5,37.5 C140.5,32 147,32 150.5,37 L195,66.5 C198.5,69 198.5,74.5 195,77 L150.5,106.5 C147,111.5 140.5,111.5 137.5,106 C134,100.5 134,43 137.5,37.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="134"
+                android:startY="34"
+                android:endX="198"
+                android:endY="106"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF2D55" />
+                <item android:offset="0.45" android:color="#E50914" />
+                <item android:offset="0.75" android:color="#B71C1C" />
+                <item android:offset="1.0" android:color="#7F0019" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Inner Negative Space Cutout -->
+    <path
+        android:pathData="M147,50 C148.5,48 151.5,48 153,50 L174,64.5 C176,66 176,68.5 174,70 L153,84.5 C151.5,86.5 148.5,86.5 147,84.5 C145,81.5 145,53 147,50 Z"
+        android:fillColor="#08080C" />
+
+    <!-- Ribbon Fold 1: Top-Right Bulb -->
+    <path
+        android:pathData="M150.5,37 C160,37 174,47 179,54 C173,58 163,60 156,56 C150,52.5 148,43 150.5,37 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="150"
+                android:startY="37"
+                android:endX="179"
+                android:endY="58"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF5277" />
+                <item android:offset="0.6" android:color="#E0113A" />
+                <item android:offset="1.0" android:color="#9E0826" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Ribbon Fold 2: Bottom-Right Bulb -->
+    <path
+        android:pathData="M195,77 C190,84 177,93 169,96 C167,88 170,78 178,72 C185,67 193,70 195,77 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="195"
+                android:startY="72"
+                android:endX="168"
+                android:endY="96"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF6B8B" />
+                <item android:offset="0.5" android:color="#F41847" />
+                <item android:offset="1.0" android:color="#A30021" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Ribbon Fold 3: Left Vertical Overlapping Pillowy Fold -->
+    <path
+        android:pathData="M137.5,106 C134.5,100 134.5,67 136,60 C142,63 150,69 150.5,77 C151,85 144,98 137.5,106 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="134"
+                android:startY="60"
+                android:endX="151"
+                android:endY="106"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF244D" />
+                <item android:offset="0.6" android:color="#D00D2D" />
+                <item android:offset="1.0" android:color="#780016" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Glossy Specular Sheen -->
+    <path
+        android:pathData="M141,40 C144,37 149,37 152,40 L191,66 C193,67.5 194,69.5 192.5,71 C191,71.5 189,71 187,69 L151,44 C147,42 143.5,43 141.5,44.5 C140.5,43.5 140,41.5 141,40 Z"
+        android:fillColor="#55FFFFFF" />
+
+    <!-- "R E S U M E" Brand Typography Group -->
+    <group android:fillColor="#8C1D2F">
+        <!-- R (at X: 94) -->
+        <path android:pathData="M94,136 h11 c4.5,0 7,2.2 7,5.5 c0,2.5 -1.5,4.5 -4,5.2 l4.5,7.3 h-3.8 l-4.2,-6.8 h-7 v6.8 h-3.5 v-18 z M97.5,139 v6 h7 c2.2,0 3.8,-1.2 3.8,-3 c0,-1.8 -1.6,-3 -3.8,-3 z" />
+
+        <!-- E (at X: 119) -->
+        <path android:pathData="M119,136 h15 v3.2 h-11.5 v4.2 h10 v3.2 h-10 v4.2 h11.5 v3.2 h-15 z" />
+
+        <!-- S (at X: 142) -->
+        <path android:pathData="M148,136 c4.5,0 7.8,2.2 7.8,5.8 c0,3.6 -2.8,4.8 -5.8,5.5 c-3,0.7 -4.2,1.2 -4.2,2.5 c0,1.2 1.2,2 3.2,2 c2.2,0 4.2,-0.8 5.8,-2 l1.8,2.6 c-2,1.6 -4.8,2.6 -7.8,2.6 c-4.5,0 -7.2,-2.2 -7.2,-5.5 c0,-3.5 2.8,-4.8 6,-5.5 c2.8,-0.6 4,-1.2 4,-2.4 c0,-1.2 -1.2,-1.8 -2.8,-1.8 c-1.8,0 -3.6,0.6 -5,1.8 l-1.8,-2.6 c2,-1.8 4.2,-2.7 6.6,-2.7 z" />
+
+        <!-- U (at X: 165) -->
+        <path android:pathData="M165,136 h3.5 v11.5 c0,3.5 2,5.2 5.5,5.2 c3.5,0 5.5,-1.7 5.5,-5.2 v-11.5 h3.5 v11.5 c0,5.5 -3.5,8.5 -9,8.5 c-5.5,0 -9,-3 -9,-8.5 z" />
+
+        <!-- M (at X: 188) -->
+        <path android:pathData="M188,136 h4.2 l5.8,11.5 l5.8,-11.5 h4.2 v18 h-3.4 v-12.8 l-5.2,10.2 h-2.8 l-5.2,-10.2 v12.8 h-3.4 z" />
+
+        <!-- E (at X: 213) -->
+        <path android:pathData="M213,136 h15 v3.2 h-11.5 v4.2 h10 v3.2 h-10 v4.2 h11.5 v3.2 h-213 z M213,136 h15 v3.2 h-11.5 v4.2 h10 v3.2 h-10 v4.2 h11.5 v3.2 h-15 z" />
+    </group>
+
+    <!-- Subtitle: TV STREAMING / VIDEO PLAYER -->
+    <path
+        android:pathData="M130,165 h60 v1.5 h-60 z"
+        android:fillColor="#33FF1744" />
+</vector>

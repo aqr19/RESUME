@@ -1,0 +1,192 @@
+<resources>
+    <string name="app_name">Resume</string>
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_trending">المحتوى الرائج</string>
+    <string name="nav_music">الموسيقى</string>
+    <string name="nav_gaming">ألعاب الفيديو</string>
+    <string name="nav_news">الأخبار</string>
+    <string name="nav_library">المكتبة</string>
+    <string name="nav_search">البحث</string>
+    <string name="nav_settings">الإعدادات</string>
+
+    <!-- Library Screen -->
+    <string name="library_title">مكتبتي</string>
+    <string name="library_tab_history">سجل المشاهدة</string>
+    <string name="library_tab_favorites">المفضلة والمحفوظات</string>
+    <string name="library_tab_subscriptions">الاشتراكات</string>
+    <string name="library_clear_history">مسح السجل</string>
+    <string name="library_history_cleared">تم مسح سجل المشاهدة</string>
+    <string name="library_empty_history">لا يوجد فيديوهات في السجل بعد. استكشف الفيديوهات الآن!</string>
+    <string name="library_empty_favorites">لا توجد فيديوهات محفوظة. احفظ الفيديوهات أثناء المشاهدة لتظهر هنا.</string>
+    <string name="library_empty_subscriptions">لم تقم بالاشتراك في أي قناة بعد.</string>
+    <string name="library_resume_from">متابعة من %s</string>
+    <string name="channel_subscribe">اشتراك</string>
+    <string name="channel_subscribed">مشترك</string>
+    <string name="player_save_favorite">إضافة إلى المفضلة</string>
+    <string name="player_remove_favorite">إزالة من المفضلة</string>
+
+    <!-- Search Screen -->
+    <string name="search_hint">ابحث في يوتيوب...</string>
+    <string name="search_results_title">نتائج البحث</string>
+    <string name="search_no_results">لم يتم العثور على فيديوهات. جرب كلمة بحث أخرى.</string>
+    <string name="search_quick_tags">مواضيع شائعة</string>
+    <string name="search_suggestions">اقتراحات البحث</string>
+    <string name="key_space">مسافة</string>
+    <string name="key_backspace">حذف</string>
+    <string name="key_clear">مسح الكل</string>
+    <string name="key_lang_switch">عربي / EN</string>
+    <string name="key_open_system_keyboard">كيبورد النظام / الهاتف</string>
+    <string name="quality_auto_desc">أفضل جودة تلقائية بحسب سرعة الاتصال</string>
+
+    <!-- Player Screen -->
+    <string name="player_loading">جاري تحميل تشغيل الفيديو...</string>
+    <string name="player_error_title">خطأ في التشغيل</string>
+    <string name="player_error_default">تعذر العثور على بث متوافق لهذا الفيديو.</string>
+    <string name="player_go_back">رجوع</string>
+    <string name="player_retry">إعادة المحاولة</string>
+    <string name="player_sponsorblock_skipped">تم تخطي %1$s (%2$d ثانية)</string>
+    <string name="player_rewind">إرجاع 10 ثوانٍ</string>
+    <string name="player_forward">تقديم 10 ثوانٍ</string>
+    <string name="player_play">تشغيل</string>
+    <string name="player_pause">إيقاف مؤقت</string>
+    <string name="player_speed">السرعة</string>
+    <string name="player_speed_select">سرعة التشغيل</string>
+    <string name="player_speed_normal">عادية</string>
+    <string name="player_related_videos">فيديوهات مقترحة</string>
+    <string name="player_video_details">تفاصيل الفيديو</string>
+    <string name="player_quality_select">جودة البث</string>
+    <string name="player_play_next">الفيديو التالي</string>
+    <string name="player_auto_quality">تلقائي (موصى به)</string>
+    <string name="player_close">إغلاق</string>
+    <string name="player_settings_title">إعدادات المشغل (نوفيو)</string>
+    <string name="player_tab_quality">الجودة</string>
+    <string name="player_tab_aspect">أبعاد الشاشة</string>
+    <string name="player_tab_speed">السرعة</string>
+    <string name="player_tab_subtitles">الترجمة</string>
+    <string name="player_tab_audio">الصوت والتضخيم</string>
+    <string name="player_tab_sleep">مؤقت النوم</string>
+    <string name="player_tab_sponsor">مانع الرعاة</string>
+    <string name="player_tab_stats">إحصائيات</string>
+    <string name="aspect_fit">احتواء قياسي (16:9)</string>
+    <string name="aspect_zoom">زووم / ملء الشاشة (قص الحواف)</string>
+    <string name="aspect_fill">تمديد كامل (Stretch)</string>
+    <string name="aspect_4_3">التنسيق الكلاسيكي (4:3)</string>
+    <string name="audio_boost_normal">100% (طبيعي)</string>
+    <string name="audio_boost_medium">125% (+2dB)</string>
+    <string name="audio_boost_high">150% (+4dB)</string>
+    <string name="audio_boost_max">200% (+6dB)</string>
+    <string name="sleep_timer_off">إيقاف</string>
+    <string name="sleep_timer_15">15 دقيقة</string>
+    <string name="sleep_timer_30">30 دقيقة</string>
+    <string name="sleep_timer_45">45 دقيقة</string>
+    <string name="sleep_timer_60">60 دقيقة</string>
+    <string name="sleep_timer_end">عند نهاية الفيديو</string>
+
+    <!-- Settings Categories -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_cat_account">حساب Google</string>
+    <string name="settings_cat_language">اللغة والمنطقة</string>
+    <string name="settings_cat_sponsorblock">مانع الرعاة (SponsorBlock)</string>
+    <string name="settings_cat_playback">التشغيل وجودة الفيديو</string>
+    <string name="settings_cat_subtitles">الترجمة النصية والشرح</string>
+    <string name="settings_cat_dearrow">تنقية العناوين (DeArrow)</string>
+    <string name="settings_cat_interface">الواجهة وجهاز التحكم</string>
+    <string name="settings_cat_storage">التخزين والخصوصية</string>
+    <string name="settings_cat_about">حول التطبيق والتشخيص</string>
+
+    <!-- Google Account Settings -->
+    <string name="account_status_signed_in">تم تسجيل الدخول</string>
+    <string name="account_status_signed_out">غير مسجل الدخول</string>
+    <string name="account_sign_in_google">تسجيل الدخول بحساب Google</string>
+    <string name="account_sign_in_desc">مزامنة اشتراكاتك وقوائم التشغيل وسجل المشاهدة عبر أجهزتك</string>
+    <string name="account_instructions_step1">1. على هاتفك أو حاسوبك، افتح الرابط التالي:</string>
+    <string name="account_instructions_url">youtube.com/activate</string>
+    <string name="account_instructions_step2">2. أدخل الرمز الظاهر على الشاشة:</string>
+    <string name="account_instructions_waiting">بانتظار تأكيد التسجيل من جهازك...</string>
+    <string name="account_switch">تبديل الحساب</string>
+    <string name="account_sign_out">تسجيل الخروج</string>
+    <string name="account_signed_in_as">تم تسجيل الدخول باسم %1$s</string>
+    <string name="account_quick_demo">تسجيل دخول تجريبي سريع</string>
+    <string name="account_cancel">إلغاء</string>
+
+    <!-- Language & Region -->
+    <string name="settings_app_language">لغة التطبيق</string>
+    <string name="settings_app_language_desc">اختر لغة واجهة المستخدم المفضلة لديك</string>
+    <string name="lang_english">English (الإنجليزية)</string>
+    <string name="lang_arabic">العربية</string>
+    <string name="settings_content_region">منطقة المحتوى</string>
+    <string name="settings_content_region_desc">تخصيص الفيديوهات الرائجة والمقترحة حسب دولتك</string>
+    <string name="settings_restricted_mode">وضع تقييد المحتوى</string>
+    <string name="settings_restricted_mode_desc">إخفاء الفيديوهات التي قد لا تناسب جميع الفئات العمرية</string>
+
+    <!-- SponsorBlock -->
+    <string name="sb_enable_title">تفعيل مانع الرعاة (SponsorBlock)</string>
+    <string name="sb_enable_desc">تخطي الإعلانات المدمجة والرعاة والترويج داخل الفيديوهات تلقائياً</string>
+    <string name="sb_skip_sponsors">تخطي المقاطع الإعلانية والرعاة</string>
+    <string name="sb_skip_sponsors_desc">الإعلانات الممولة والدعايات المباشرة داخل المقطع</string>
+    <string name="sb_skip_intro">تخطي المقدمة وشعار القناة</string>
+    <string name="sb_skip_intro_desc">شارة البداية ومقدمات المقاطع الطويلة</string>
+    <string name="sb_skip_outro">تخطي الخاتمة وشاشات النهاية</string>
+    <string name="sb_skip_outro_desc">شارات النهاية وبطاقات الختام وشاشات الفيديوهات المقترحة</string>
+    <string name="sb_skip_selfpromo">تخطي الترويج الذاتي</string>
+    <string name="sb_skip_selfpromo_desc">الإعلانات عن البضائع والمنتجات الشخصية لصانع المحتوى</string>
+    <string name="sb_skip_interaction">تخطي تذكيرات التفاعل</string>
+    <string name="sb_skip_interaction_desc">تذكيرات الإعجاب والاشتراك وتفعيل جرس التنبيهات</string>
+    <string name="sb_skip_music">تخطي المقاطع غير الموسيقية</string>
+    <string name="sb_skip_music_desc">المشاهد الحوارية واللقطات الصامتة في مقاطع الأغاني</string>
+    <string name="sb_show_toast">إظهار إشعار التخطي على الشاشة</string>
+    <string name="sb_show_toast_desc">عرض شارة صغيرة عند تخطي جزء إعلاني بنجاح</string>
+    <string name="sb_toast_duration">مدة ظهور الإشعار</string>
+
+    <!-- Playback & Video -->
+    <string name="play_quality_title">جودة الفيديو الافتراضية</string>
+    <string name="play_quality_desc">دقة البث المفضلة عند بدء تشغيل الفيديو</string>
+    <string name="play_speed_title">سرعة التشغيل الافتراضية</string>
+    <string name="play_speed_desc">معدل سرعة عرض الفيديو المفضل</string>
+    <string name="play_autonext_title">التشغيل التلقائي للمقطع التالي</string>
+    <string name="play_autonext_desc">تشغيل الفيديو المقترح تلقائياً عند انتهاء الفيديو الحالي</string>
+    <string name="play_audio_lang">المسار الصوتي المفضل</string>
+    <string name="play_audio_lang_desc">الصوت الأصلي أو الدبلجة العربية عند توفرها</string>
+    <string name="play_hw_codec">فك الترميز بالعتاد (Hardware Decoding)</string>
+    <string name="play_hw_codec_desc">استخدام معالج التلفزيون لتشغيل سلس لدقة 4K وتقليل استهلاك الطاقة</string>
+    <string name="play_buffer_size">حجم التخزين المؤقت (Buffer)</string>
+    <string name="play_buffer_size_desc">ضبط حجم الذاكرة المؤقتة لسرعات الإنترنت غير المستقرة</string>
+
+    <!-- Subtitles -->
+    <string name="sub_enable">تفعيل الترجمة والشرح (CC)</string>
+    <string name="sub_enable_desc">عرض الترجمة التوضيحية تلقائياً عند توفرها للفيديو</string>
+    <string name="sub_language">لغة الترجمة المفضلة</string>
+    <string name="sub_font_size">حجم خط الترجمة</string>
+    <string name="sub_bg_opacity">شفافية خلفية الترجمة</string>
+
+    <!-- DeArrow & UI Clean -->
+    <string name="dearrow_enable">تفعيل تنقية العناوين (DeArrow)</string>
+    <string name="dearrow_enable_desc">استبدال العناوين المضللة (Clickbait) بعناوين موضوعية ودقيقة</string>
+    <string name="dearrow_thumbnails">استبدال الصور المصغرة المضللة</string>
+    <string name="dearrow_thumbnails_desc">عرض لقطة حقيقية من داخل الفيديو بدلاً من الصور المثيرة</string>
+
+    <!-- Interface & Remote -->
+    <string name="ui_card_size">حجم بطاقات الفيديو</string>
+    <string name="ui_fast_seek">مدة القفز السريع بريموت التحكم</string>
+    <string name="ui_show_clock">عرض الساعة في الشريط العلوي</string>
+    <string name="ui_low_ram">تحسين أجهزة التلفزيون الضعيفة</string>
+    <string name="ui_low_ram_desc">تقليل المؤثرات الحركية لدعم الشاشات وأجهزة البث الاقتصادية</string>
+    <string name="ui_sleep_timer">مؤقت إيقاف التشغيل عند عدم الاستخدام</string>
+
+    <!-- Storage & Privacy -->
+    <string name="storage_save_history">حفظ سجل البحث</string>
+    <string name="storage_clear_history">مسح سجل البحث</string>
+    <string name="storage_clear_history_desc">حذف جميع الكلمات وعمليات البحث السابقة</string>
+    <string name="storage_clear_cache">مسح ذاكرة الصور والبث المؤقتة</string>
+    <string name="storage_clear_cache_desc">تحرير المساحة التخزينية الداخلية للتلفزيون</string>
+    <string name="storage_reset_all">استعادة كافة الإعدادات الافتراضية</string>
+    <string name="storage_reset_all_desc">إعادة ضبط جميع خيارات التطبيق كما كانت عند التثبيت</string>
+    <string name="storage_cleared_toast">تم مسح الذاكرة المؤقتة بنجاح</string>
+
+    <!-- About -->
+    <string name="about_app_desc">تطبيق يوتيوب مخصص لأجهزة Android TV مبني بـ MediaServiceCore و Jetpack Compose مع دعم كامل لجهاز التحكم عن بُعد ومانع الرعاة.</string>
+    <string name="about_version">الإصدار</string>
+    <string name="about_engine">محرك البث MediaService</string>
+    <string name="about_sb_status">واجهة SponsorBlock</string>
+    <string name="about_active">متصل ونشط</string>
+</resources>
