@@ -1,6 +1,6 @@
 name: Build & Release
 
-on: [push, workflow_dispatch]
+on:
   push:
     tags:
       - 'v*'
