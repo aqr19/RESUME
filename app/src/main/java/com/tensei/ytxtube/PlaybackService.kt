@@ -96,7 +96,7 @@ class PlaybackService : MediaSessionService() {
                     // buffer. The old 15 s/50 s/1 s policy is what made every open sit on
                     // a spinner before the first frame.
                     .setAllocator(androidx.media3.exoplayer.upstream.DefaultAllocator(true, 64 * 1024))
-                    .setBufferDurationsMs(2_500, 30_000, 250, 750)
+                    .setBufferDurationsMs(15_000, 50_000, 250, 750)
                     .setBackBuffer(10_000, false)
                     .setPrioritizeTimeOverSizeThresholds(true)
                     .build(),
@@ -502,7 +502,7 @@ private class YouTubeMediaSourceFactory(context: Context) : MediaSource.Factory 
         if (mediaItem.localConfiguration?.uri?.scheme == "file") {
             return fallback.createMediaSource(mediaItem)
         }
-        val info = StreamCache.get(mediaItem.mediaId) ?: return fallback.createMediaSource(mediaItem)
+        val info = StreamCache.get(mediaItem.mediaId) ?: return failingSource(mediaItem, "cache miss")
         val isLive = info.streamType == org.schabi.newpipe.extractor.stream.StreamType.LIVE_STREAM
         val hlsUrl = info.hlsUrl?.ifBlank { null }
         // HLS is a live fallback only. A VOD HLS manifest carries just YouTube's default audio
@@ -557,8 +557,24 @@ private class YouTubeMediaSourceFactory(context: Context) : MediaSource.Factory 
             picked.muxed != null -> source(picked.muxed, info.duration, mediaItem)
 
 
-            else -> fallback.createMediaSource(mediaItem)
+            else -> failingSource(mediaItem, "no playable video/audio/muxed/hls streams")
         }
+    }
+
+    private fun failingSource(mediaItem: MediaItem, reason: String): MediaSource {
+        Log.e("YTXTube", "media source ${mediaItem.mediaId} failed: $reason")
+        val failingDataSourceFactory = DataSource.Factory {
+            object : androidx.media3.datasource.BaseDataSource(false) {
+                override fun open(dataSpec: androidx.media3.datasource.DataSpec): Long {
+                    throw java.io.IOException("Unplayable stream (${mediaItem.mediaId}): $reason")
+                }
+                override fun read(buffer: ByteArray, offset: Int, length: Int): Int = C.RESULT_END_OF_INPUT
+                override fun getUri(): Uri? = null
+                override fun close() {}
+            }
+        }
+        return ProgressiveMediaSource.Factory(failingDataSourceFactory)
+            .createMediaSource(mediaItem.buildUpon().setUri("ytxtube://error/${mediaItem.mediaId}").build())
     }
 
     

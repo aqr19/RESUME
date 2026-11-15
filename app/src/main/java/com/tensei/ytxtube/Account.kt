@@ -1657,7 +1657,7 @@ object InnerTube {
         // Initial page: deliver a dynamic, diverse, and unique mix each time
         if (next == null) {
             val randomTopics = POPULAR_TOPICS.shuffled().take(3)
-            val trendingDeferred = async { runCatching { YouTube.trending(null) }.getOrNull() }
+            val trendingDeferred = async { runCatching { kotlinx.coroutines.withTimeoutOrNull(4_000L) { YouTube.trending(null) } }.getOrNull() }
             val topic1Deferred = async { runCatching { YouTube.search(randomTopics[0]) }.getOrDefault(emptyList()) }
             val topic2Deferred = async { runCatching { YouTube.search(randomTopics[1]) }.getOrDefault(emptyList()) }
             val topic3Deferred = async { runCatching { YouTube.search(randomTopics[2]) }.getOrDefault(emptyList()) }

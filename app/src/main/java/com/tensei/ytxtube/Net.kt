@@ -9,10 +9,13 @@ import org.schabi.newpipe.extractor.downloader.Response
 import org.schabi.newpipe.extractor.exceptions.ReCaptchaException
 import java.util.concurrent.TimeUnit
 
-
 object Net {
 
     const val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0"
+    private const val IOS_UA = "com.google.ios.youtube/21.10.3 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)"
+    private const val VR_UA = "com.google.android.apps.youtube.vr.oculus/1.65.10 (Linux; U; Android 12L; eureka-user Build/SQ3A.220605.009.A1) gzip"
+    private const val ANDROID_UA = "com.google.android.youtube/20.10.38 (Linux; U; Android 14) gzip"
+    private const val TV_UA = "Mozilla/5.0(SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 (KHTML, like Gecko) SamsungBrowser/9.2 TV Safari/605.1.15"
 
     val client: OkHttpClient by lazy {
         val dispatcher = okhttp3.Dispatcher().apply {
@@ -24,20 +27,32 @@ object Net {
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectionPool(okhttp3.ConnectionPool(32, 5, TimeUnit.MINUTES))
+            .addInterceptor { chain ->
+                val req = chain.request()
+                val host = req.url.host
+                if (host.contains("googlevideo.com")) {
+                    val c = req.url.queryParameter("c")?.uppercase()
+                    val ua = when (c) {
+                        "IOS" -> IOS_UA
+                        "ANDROID_VR" -> VR_UA
+                        "ANDROID", "ANDROID_TESTSUITE", "ANDROID_MUSIC" -> ANDROID_UA
+                        "TVHTML5", "TVHTML5_SIMPLY_EMBEDDED_PLAYER" -> TV_UA
+                        else -> null
+                    }
+                    if (ua != null) {
+                        return@addInterceptor chain.proceed(req.newBuilder().header("User-Agent", ua).build())
+                    }
+                }
+                chain.proceed(req)
+            }
             .build()
     }
-
 
     @Volatile private var mediaHost: String? = null
 
     fun noteMediaHost(url: String?) {
         url?.toHttpUrlOrNull()?.host?.let { mediaHost = it }
     }
-
-    
-
-
-
 
     fun prewarmMediaConnection() {
         val host = mediaHost ?: return
@@ -49,7 +64,6 @@ object Net {
     }
 }
 
-
 class NewPipeDownloader private constructor(private val client: OkHttpClient) : Downloader() {
 
     override fun execute(request: Request): Response {
@@ -60,37 +74,23 @@ class NewPipeDownloader private constructor(private val client: OkHttpClient) : 
         var sendData = request.dataToSend()
         if (sendData != null && isYouTube && langCode.isNotEmpty()) {
             val raw = String(sendData, Charsets.UTF_8)
-            if (raw.contains("\"context\"") || raw.contains("\"client\"")) {
-                var modified = raw
-                if (modified.contains("\"hl\":")) {
-                    modified = modified.replace(Regex("\"hl\"\\s*:\\s*\"[^\"]*\""), "\"hl\":\"$langCode\"")
-                } else if (modified.contains("\"client\":{")) {
-                    modified = modified.replace("\"client\":{", "\"client\":{\"hl\":\"$langCode\",\"gl\":\"$countryCode\",")
+            if (raw.trimStart().startsWith("{") && (raw.contains("\"context\"") || raw.contains("\"client\""))) {
+                runCatching {
+                    val json = org.json.JSONObject(raw)
+                    val clientObj = json.optJSONObject("context")?.optJSONObject("client")
+                    if (clientObj != null) {
+                        clientObj.put("hl", langCode)
+                        clientObj.put("gl", countryCode)
+                        sendData = json.toString().toByteArray(Charsets.UTF_8)
+                    }
                 }
-                if (modified.contains("\"gl\":")) {
-                    modified = modified.replace(Regex("\"gl\"\\s*:\\s*\"[^\"]*\""), "\"gl\":\"$countryCode\"")
-                }
-                sendData = modified.toByteArray(Charsets.UTF_8)
             }
         }
         val body = sendData?.toRequestBody()
 
-        var targetUrl = request.url()
-        if (isYouTube && langCode.isNotEmpty()) {
-            val httpUrl = targetUrl.toHttpUrlOrNull()
-            if (httpUrl != null) {
-                targetUrl = httpUrl.newBuilder()
-                    .removeAllQueryParameters("hl")
-                    .addQueryParameter("hl", langCode)
-                    .removeAllQueryParameters("gl")
-                    .addQueryParameter("gl", countryCode)
-                    .build().toString()
-            }
-        }
-
         val builder = okhttp3.Request.Builder()
             .method(request.httpMethod(), body)
-            .url(targetUrl)
+            .url(request.url())
             .addHeader("User-Agent", Net.USER_AGENT)
         request.headers().forEach { (name, values) ->
             builder.removeHeader(name)
@@ -103,12 +103,12 @@ class NewPipeDownloader private constructor(private val client: OkHttpClient) : 
         val existingCookie = request.headers()["Cookie"]?.firstOrNull() ?: ""
         val prefCookie = "PREF=hl=$langCode&gl=$countryCode"
         val mergedCookie = buildString {
-            if (Account.signedIn) {
+            if (isYouTube && Account.signedIn) {
                 val acctCookies = Account.cookieHeader()
                 if (acctCookies.isNotEmpty()) append(acctCookies).append("; ")
             }
             if (existingCookie.isNotEmpty()) append(existingCookie).append("; ")
-            if (!contains("PREF=")) append(prefCookie)
+            if (isYouTube && !contains("PREF=")) append(prefCookie)
         }.trim().removeSuffix(";")
 
         if (mergedCookie.isNotEmpty()) {
@@ -123,7 +123,6 @@ class NewPipeDownloader private constructor(private val client: OkHttpClient) : 
             }
         }
         client.newCall(builder.build()).execute().use { response ->
-
             if (response.code == 429) throw ReCaptchaException("reCaptcha challenge requested", request.url())
             val text = response.body?.string()
             return Response(

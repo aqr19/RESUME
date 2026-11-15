@@ -13,7 +13,7 @@ class YtxPoTokenProvider(private val generator: PoTokenGenerator) : PoTokenProvi
     private fun resolvePoToken(videoId: String?): PoTokenResult? {
         videoId ?: return null
         return try {
-            val sessionId = Account.visitorData() ?: ("guest_" + System.currentTimeMillis())
+            val sessionId = Account.visitorData() ?: PoTokenGenerator.guestSessionId
             val res = generator.getWebClientPoToken(videoId, sessionId) ?: return null
             PoTokenResult(
                 sessionId,

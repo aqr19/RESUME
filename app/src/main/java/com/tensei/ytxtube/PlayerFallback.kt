@@ -178,8 +178,19 @@ object PlayerFallback {
         if (!status.equals("OK", ignoreCase = true)) return false
         val streaming = player.optJSONObject("streamingData") ?: return false
         if (streaming.optString("hlsManifestUrl").isNotBlank()) return true
-        if ((streaming.optJSONArray("formats")?.length() ?: 0) > 0) return true
-        return (streaming.optJSONArray("adaptiveFormats")?.length() ?: 0) > 0
+        val formats = streaming.optJSONArray("formats")
+        if (formats != null) {
+            for (i in 0 until formats.length()) {
+                if (formats.optJSONObject(i)?.optString("url")?.startsWith("http") == true) return true
+            }
+        }
+        val adaptive = streaming.optJSONArray("adaptiveFormats")
+        if (adaptive != null) {
+            for (i in 0 until adaptive.length()) {
+                if (adaptive.optJSONObject(i)?.optString("url")?.startsWith("http") == true) return true
+            }
+        }
+        return false
     }
 
     private fun isBlocked(body: String): Boolean {

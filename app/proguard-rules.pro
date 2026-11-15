@@ -28,7 +28,6 @@
 
 -dontwarn androidx.media3.**
 
-}
 # Release logs are not user-visible; dropping the calls also drops every format string.
 # -assumenosideeffects class android.util.Log {
 #     public static *** v(...);

@@ -31,7 +31,7 @@ class PoTokenGenerator {
         webPoTokenGenLock.withLock {
           if (webPoTokenGenerator == null) {
             Log.d(TAG, "Pre-initializing PoTokenWebView in background...")
-            webPoTokenSessionId = "init-" + System.currentTimeMillis()
+            webPoTokenSessionId = guestSessionId
             webPoTokenGenerator =
               PoTokenWebView.getNewPoTokenGenerator(YTXTubeApplication.appContext)
             webPoTokenStreamingPot = webPoTokenGenerator!!.generatePoToken(webPoTokenSessionId!!)
@@ -86,7 +86,8 @@ class PoTokenGenerator {
     }
   }
 
-  private companion object {
+  companion object {
+    val guestSessionId: String = "guest_" + System.currentTimeMillis()
     const val POTOKEN_TIMEOUT_MS = 8_000L
   }
 
