@@ -8,7 +8,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.tensei.ytxtube"
+        applicationId = "com.tensei.ytxtube.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 220
@@ -17,12 +17,16 @@ android {
 
     signingConfigs {
         create("release") {
-            val keystoreFile = file("release.keystore")
-            if (keystoreFile.exists()) {
+            val keystorePath = System.getenv("SIGNING_STORE_FILE")
+            val keystoreFile = if (!keystorePath.isNullOrBlank()) file(keystorePath) else null
+            val ksPass = System.getenv("KEYSTORE_PASSWORD")
+            val kAlias = System.getenv("KEY_ALIAS")
+            val kPass = System.getenv("KEY_PASSWORD")
+            if (keystoreFile != null && keystoreFile.exists() && !ksPass.isNullOrBlank() && !kAlias.isNullOrBlank() && !kPass.isNullOrBlank()) {
                 storeFile = keystoreFile
-                storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "android"
-                keyAlias = System.getenv("KEY_ALIAS") ?: "androiddebugkey"
-                keyPassword = System.getenv("KEY_PASSWORD") ?: "android"
+                storePassword = ksPass
+                keyAlias = kAlias
+                keyPassword = kPass
                 enableV1Signing = true
                 enableV2Signing = true
                 enableV3Signing = true
@@ -39,7 +43,7 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            signingConfig = signingConfigs.findByName("release")?.takeIf { file("release.keystore").exists() } ?: signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release")?.takeIf { it.storeFile?.exists() == true } ?: signingConfigs.getByName("debug")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
