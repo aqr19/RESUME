@@ -21,11 +21,12 @@ jobs:
           cache: gradle
 
       - name: Decode Signing Keystore
-        if: ${{ secrets.SIGNING_KEYSTORE_BASE64 != '' }}
         env:
           SIGNING_KEYSTORE_BASE64: ${{ secrets.SIGNING_KEYSTORE_BASE64 }}
         run: |
-          echo "$SIGNING_KEYSTORE_BASE64" | base64 -d > "${RUNNER_TEMP}/signing.jks"
+          if [ -n "$SIGNING_KEYSTORE_BASE64" ]; then
+            echo "$SIGNING_KEYSTORE_BASE64" | base64 -d > "${RUNNER_TEMP}/signing.jks"
+          fi
 
       - name: Build Release APK
         env:
