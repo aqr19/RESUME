@@ -113,7 +113,7 @@ class InnerTubeParseTest {
     @Test fun channelHeaderFromVideosTab() {
         val meta = InnerTube.parseChannelHeader(fixture("channel_videos"))
         assertEquals("lessbitter", meta?.handle)
-        assertEquals(21_000L, meta?.subscribers)
+        assertEquals("actual=${meta?.subscribers}", "actual=21000")
         assertEquals(27L, meta?.videoCount)
         assertEquals(false, meta?.verified)
     }
