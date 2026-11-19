@@ -162,7 +162,7 @@ const ALGO = {
 
   getHistory() {
     try {
-      return JSON.parse(localStorage.getItem('ytxtube_history') || '[]');
+      return JSON.parse(localStorage.getItem('resume_history') || '[]');
     } catch {
       return [];
     }
@@ -170,7 +170,7 @@ const ALGO = {
 
   getPreferences() {
     try {
-      return JSON.parse(localStorage.getItem('ytxtube_prefs') || '{"keywords":{}, "channels":{}}');
+      return JSON.parse(localStorage.getItem('resume_prefs') || '{"keywords":{}, "channels":{}}');
     } catch {
       return { keywords: {}, channels: {} };
     }
@@ -188,7 +188,7 @@ const ALGO = {
         timestamp: Date.now()
       });
       if (history.length > 50) history = history.slice(0, 50);
-      localStorage.setItem('ytxtube_history', JSON.stringify(history));
+      localStorage.setItem('resume_history', JSON.stringify(history));
 
       const prefs = this.getPreferences();
       if (video.uploaderName) {
@@ -202,7 +202,7 @@ const ALGO = {
           }
         });
       }
-      localStorage.setItem('ytxtube_prefs', JSON.stringify(prefs));
+      localStorage.setItem('resume_prefs', JSON.stringify(prefs));
     } catch (e) {
       console.warn('Algorithm record note:', e);
     }
@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     saveQrBtn.onclick = () => {
       const a = document.createElement('a');
       a.href = 'upi_qr.png';
-      a.download = 'ytxtube_upi_qr.png';
+      a.download = 'resume_upi_qr.png';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -944,7 +944,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (donateNowBtn) {
     donateNowBtn.onclick = () => {
-      window.location.href = 'upi://pay?pa=koustubhgaikwad7-1@okaxis&pn=YTXTube%20Support&cu=INR';
+      window.location.href = 'upi://pay?pa=koustubhgaikwad7-1@okaxis&pn=RESUME%20Support&cu=INR';
     };
   }
 
@@ -953,7 +953,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     shareBtn.onclick = () => {
       if (!currentVideoId) return;
       const titleEl = document.getElementById('watch-title');
-      const title = titleEl ? titleEl.textContent : 'YTXTube Video';
+      const title = titleEl ? titleEl.textContent : 'RESUME Video';
       const url = `https://www.youtube.com/watch?v=${currentVideoId}`;
       
       if (navigator.share) {

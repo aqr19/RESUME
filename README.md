@@ -1,20 +1,20 @@
 <div align="center">
 
-# YTXTube
+# RESUME
 
-<img src="docs/icon.png" width="200" alt="YTXTube Icon" />
+<img src="docs/icon.png" width="200" alt="RESUME Icon" />
 
 <br/>
 
 **A lightweight (3MB) YouTube and YouTube Music client with a modern Liquid Glass UI, ad-free playback, endless personalised Shorts, synced Apple Music-style lyrics, and high-quality downloads.**
 
-[![Version](https://img.shields.io/badge/Version-2.2.0-E50914?style=flat-square&logo=android&logoColor=white)](https://github.com/Koustubh12345/YTXTube/releases/latest)
-[![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/Koustubh12345/YTXTube/releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.2.0-E50914?style=flat-square&logo=android&logoColor=white)](https://github.com/aqr19/RESUME/releases/latest)
+[![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/aqr19/RESUME/releases/latest)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
 
 <br/>
 
-[**Download Latest APK (v2.2.0)**](https://github.com/Koustubh12345/YTXTube/releases/latest) &nbsp;•&nbsp; [**🌐 Try YTXTube Web App**](https://koustubh12345.github.io/YTXTube/)
+[**Download Latest APK (v2.2.0)**](https://github.com/aqr19/RESUME/releases/latest) &nbsp;•&nbsp; [**🌐 Try RESUME Web App**](https://koustubh12345.github.io/RESUME/)
 
 </div>
 
@@ -36,17 +36,17 @@
 
 ---
 
-## YTXTube Website
+## RESUME Website
 
 Web app to watch YouTube videos without ads or sponsors, playing videos at highest quality with no ads and HDR support.
 
-[**🌐 Open YTXTube Web App**](https://koustubh12345.github.io/YTXTube/)
+[**🌐 Open RESUME Web App**](https://koustubh12345.github.io/RESUME/)
 
 ---
 
 ## Download
 
-[**Download Latest APK (v2.2.0)**](https://github.com/Koustubh12345/YTXTube/releases/latest)
+[**Download Latest APK (v2.2.0)**](https://github.com/aqr19/RESUME/releases/latest)
 
 > **Version 2.2.0** · Android 7.0+ · One universal APK for phones, tablets, and Android TV.
 
@@ -71,10 +71,10 @@ Web app to watch YouTube videos without ads or sponsors, playing videos at highe
 
 ## Join Our Community
 
-Facing issues or have suggestions for YTXTube? Join our Telegram community to report bugs, share feedback, and request new features.
+Facing issues or have suggestions for RESUME? Join our Telegram community to report bugs, share feedback, and request new features.
 
 <p align="center">
-  <a href="https://t.me/YTXTubeDiscussion">
+  <a href="https://t.me/RESUMEDiscussion">
     <img src="https://img.shields.io/badge/Join%20Telegram%20Community-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Telegram Community" />
   </a>
 </p>
@@ -83,7 +83,7 @@ Facing issues or have suggestions for YTXTube? Join our Telegram community to re
 
 ## Disclaimer
 
-YTXTube is an independent, open-source project and is **not affiliated with or endorsed by Google LLC or YouTube**. All content is streamed directly from YouTube's servers for personal, educational use. Provided "as is" under the GPL-3.0 license without warranty; users are responsible for complying with YouTube's Terms of Service and applicable copyright laws.
+RESUME is an independent, open-source project and is **not affiliated with or endorsed by Google LLC or YouTube**. All content is streamed directly from YouTube's servers for personal, educational use. Provided "as is" under the GPL-3.0 license without warranty; users are responsible for complying with YouTube's Terms of Service and applicable copyright laws.
 
 ---
 

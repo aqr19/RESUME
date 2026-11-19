@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.tensei.ytxtube"
+    namespace = "com.tensei.resume"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.tensei.ytxtube.app"
+        applicationId = "com.tensei.resume.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 220

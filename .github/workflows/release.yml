@@ -27,7 +27,7 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "version=$VER" >> "$GITHUB_OUTPUT"
           echo "prerelease=$PRE" >> "$GITHUB_OUTPUT"
-          echo "apk=YTXTube-v${VER}.apk" >> "$GITHUB_OUTPUT"
+          echo "apk=RESUME-v${VER}.apk" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -68,7 +68,7 @@ jobs:
           PKG=$(echo "$BADGE" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
           VC=$(echo "$BADGE" | sed -n "s/.*versionCode='\([^']*\)'.*/\1/p")
           VN=$(echo "$BADGE" | sed -n "s/.*versionName='\([^']*\)'.*/\1/p")
-          [ "$PKG" = "com.tensei.ytxtube.app" ] || { echo "::error::Expected com.tensei.ytxtube.app, got $PKG"; exit 1; }
+          [ "$PKG" = "com.tensei.resume.app" ] || { echo "::error::Expected com.tensei.resume.app, got $PKG"; exit 1; }
           [ -n "$VC" ] && [ -n "$VN" ] || { echo "::error::Missing versionCode or versionName"; exit 1; }
           CERT=$("$BT/apksigner" verify --verbose --print-certs "$APK")
           echo "$CERT" | grep -qi "Android Debug" && { echo "::error::Signed with Debug key!"; exit 1; }
@@ -90,7 +90,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.meta.outputs.tag }}
-          name: YTXTube ${{ steps.meta.outputs.version }}
+          name: RESUME ${{ steps.meta.outputs.version }}
           prerelease: ${{ steps.meta.outputs.prerelease == 'true' }}
           draft: false
           generate_release_notes: true
@@ -99,7 +99,7 @@ jobs:
             ${{ steps.meta.outputs.apk }}
             ${{ steps.meta.outputs.apk }}.sha256
           body: |
-            - **Application ID**: `com.tensei.ytxtube.app`
+            - **Application ID**: `com.tensei.resume.app`
             - **Version**: `${{ steps.verify.outputs.vn }}` (`${{ steps.verify.outputs.vc }}`)
             - **APK SHA-256**: `${{ steps.verify.outputs.sha }}`
             - **Certificate SHA-256**: `${{ steps.verify.outputs.fp }}`

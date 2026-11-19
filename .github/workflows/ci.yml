@@ -27,10 +27,10 @@ jobs:
           APK=$(find app/build/outputs/apk/debug -name "*.apk" | head -n 1)
           AAPT2=$(find "$ANDROID_HOME/build-tools" -name "aapt2" | sort -V | tail -n 1)
           INFO=$("$AAPT2" dump badging "$APK")
-          echo "$INFO" | grep -q "name='com.tensei.ytxtube.app'" || { echo "::error::Invalid applicationId"; exit 1; }
+          echo "$INFO" | grep -q "name='com.tensei.resume.app'" || { echo "::error::Invalid applicationId"; exit 1; }
           echo "$INFO" | grep -q "versionCode='[0-9]" || { echo "::error::Missing versionCode"; exit 1; }
       - uses: actions/upload-artifact@v4
         with:
-          name: YTXTube-debug
+          name: RESUME-debug
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error

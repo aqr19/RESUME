@@ -18,7 +18,7 @@
     <uses-feature android:name="android.hardware.gamepad" android:required="false" />
 
     <application
-        android:name=".YTXTubeApplication"
+        android:name=".RESUMEApplication"
         android:allowBackup="false"
         android:banner="@drawable/tv_banner"
         android:enableOnBackInvokedCallback="true"
@@ -26,7 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YTXTube">
+        android:theme="@style/Theme.RESUME">
 
         <activity
             android:name=".MainActivity"
