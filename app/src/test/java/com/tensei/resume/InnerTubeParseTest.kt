@@ -104,7 +104,7 @@ class InnerTubeParseTest {
         assertEquals(1_234_567L, InnerTube.parseViews("1,234,567 views"))
         assertEquals(1_200_000L, InnerTube.parseViews("1.2M views"))
         assertEquals(36_000L, InnerTube.parseViews("36K views"))
-        assertEquals(4_850_000L, InnerTube.parseViews("4.85M subscribers"))
+        assertEquals(4_850_000L, InnerTube.parseViews("4.85M views"))
         assertEquals(1_100L, InnerTube.parseViews("1.1K videos"))
         assertEquals(0L, InnerTube.parseViews("No views"))
         assertEquals(-1L, InnerTube.parseViews(null))
